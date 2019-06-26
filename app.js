@@ -11,7 +11,7 @@ const config = {
   http: {
     port: 8000,
     mediaroot: './media',
-    webroot: './www',
+    webroot: './public',//./www',
     allow_origin: '*'
   },
   https: {
@@ -27,6 +27,18 @@ const config = {
     publish: false,
     secret: 'nodemedia2017privatekey'
   },
+  trans: {
+    ffmpeg: './ffmpeg.exe',
+    tasks: [
+      {
+        app: 'live',
+        hls: true,
+        hlsFlags: '[hls_time=2:hls_list_size=3:hls_flags=delete_segments]',
+        dash: true,
+        dashFlags: '[f=dash:window_size=3:extra_window_size=5]'
+      }
+    ]
+  }
 };
 
 
