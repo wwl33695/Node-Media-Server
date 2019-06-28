@@ -104,7 +104,8 @@
                 enableStashBuffer: false,
                 enableWorker: true,
                 lazyLoad: false,
-//                lazyLoadMaxDuration: 3 * 60,
+                autoCleanupMaxBackwardDuration: 2,
+                autoCleanupMinBackwardDuration: 1,
                 seekType: 'range',
             });
             player.attachMediaElement(element);
